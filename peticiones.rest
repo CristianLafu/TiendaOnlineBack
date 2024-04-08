@@ -1,0 +1,55 @@
+GET http://localhost:3000/api/products
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhOTNhNjQyYjA2MzlmZTFlMzdiYSIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzEyNTc1MDY2fQ.C9Hz9zf_8t_IDXNN1H62jRtU2a2QKDuewPo8aTYf6Io
+
+
+###
+GET http://localhost:3000/api/products/price/50/max/60
+
+
+
+###
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+    "name": "Thermomix",
+    "description": "Pones la comida",
+    "price": 12,
+    "department": "cocina",
+    "available": "true",
+    "stock": 30
+}
+
+
+
+
+
+
+###
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+    "name": "Paquito",
+    "email": "Paqueras@gmail.com",
+    "password": "Paquito69"
+}
+
+###
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "Paqueras@gmail.com",
+    "password": "Paquito69"
+}
+
+
+###
+PUT http://localhost:3000/api/products/add_cart
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhOTNhNjQyYjA2MzlmZTFlMzdiYSIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzEyNTc1MDY2fQ.C9Hz9zf_8t_IDXNN1H62jRtU2a2QKDuewPo8aTYf6Io
+
+{
+    "product_id": "6565d2d08c270fdedef3956a"
+}
