@@ -44,9 +44,16 @@ router.get('/:department', async (req, res) => {
 });
 
 router.post('/', validate(productSchema), async (req, res) => {
-    // req.body: name, description, price, department, available, stock
-    const newProduct = await Product.create(req.body);
-    res.json(newProduct);
+    try {
+        // req.body: name, description, price, department, available, stock
+        req.body.creator = req.user._id;
+        const newProduct = await Product.create(req.body);
+        //Recupero el nuevo objeto creado a partir de su id
+        const product = await Product.findById(newProduct._id).populate('creator', 'name email -_id');
+        res.json(product);
+    } catch (error) {
+        res.json({ fatal: error.message });
+    }
 
 });
 

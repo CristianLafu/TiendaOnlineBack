@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 
-
+const Product = require('../../models/product.model');
 const User = require('../../models/user.model');
+
 const { validate, checkToken } = require('../../helpers/middlewares');
 const { createToken } = require('../../helpers/utils');
 const registerSchema = require('../../schemas/register.schema');
@@ -11,6 +12,11 @@ const registerSchema = require('../../schemas/register.schema');
 router.get('/profile', checkToken, (req, res) => {
     res.json(req.user);
 })
+
+router.get('/products', checkToken, async (req, res) => {
+    const products = await Product.find({ creator: req.user._id })
+    res.json(products);
+});
 
 router.get('/:userId', async (req, res) => {
     const { userId } = req.params;

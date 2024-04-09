@@ -5,17 +5,23 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhOTNhNjQyYjA2
 ###
 GET http://localhost:3000/api/products/price/50/max/60
 
+###
+GET http://localhost:3000/api/users/products
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTQwZTQ4MWE0NTFlMWE5NjNmYWNhNSIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzEyNjQ4NTU5fQ.-gI4pEQM-svtx8YmzG1Af7v3ACnF2MASNvDtT-cRXF0
+
+
 
 
 ###
 POST http://localhost:3000/api/products
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTQwZTQ4MWE0NTFlMWE5NjNmYWNhNSIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzEyNjQ4NTU5fQ.-gI4pEQM-svtx8YmzG1Af7v3ACnF2MASNvDtT-cRXF0
 
 {
-    "name": "Thermomix",
-    "description": "Pones la comida",
-    "price": 12,
-    "department": "cocina",
+    "name": "Cacharra modelo 35",
+    "description": "Pones la mesa y hace cosas",
+    "price": 1400,
+    "department": "techo",
     "available": "true",
     "stock": 30
 }
@@ -48,7 +54,7 @@ Content-Type: application/json
 ###
 PUT http://localhost:3000/api/products/add_cart
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhOTNhNjQyYjA2MzlmZTFlMzdiYSIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzEyNTc1MDY2fQ.C9Hz9zf_8t_IDXNN1H62jRtU2a2QKDuewPo8aTYf6Io
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTQwZTQ4MWE0NTFlMWE5NjNmYWNhNSIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzEyNjQ4NTU5fQ.-gI4pEQM-svtx8YmzG1Af7v3ACnF2MASNvDtT-cRXF0
 
 {
     "product_id": "6565d2d08c270fdedef3956a"
